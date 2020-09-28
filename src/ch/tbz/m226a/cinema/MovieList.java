@@ -8,4 +8,7 @@ public class MovieList {
     public void addMovie(){
 
     }
+    public void showMovies(){
+
+    }
 }
