@@ -1,1 +1,1 @@
-# ATS_Cineama
+# ATS_Cinema
