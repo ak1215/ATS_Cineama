@@ -1,4 +1,5 @@
 package ch.tbz.m226a.cinema;
 
-public class Language {
+public enum Language {
+    English, German
 }
