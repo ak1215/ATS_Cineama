@@ -19,6 +19,7 @@ public class MovieList {
         jeanSerbegAgainstAllEnemies.add("JEAN SEBREG - AGAINST ALL ENEMIES");
         justMercy.add("JUST MERCY");
     }
+
     public void showMovies(){
 
     }
