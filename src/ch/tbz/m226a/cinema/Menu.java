@@ -17,7 +17,7 @@ public class Menu {
 
     }
     public void showCurrentMovies(){
-        for (String nameOfMovie: movieList.listOfMovies
+        for (Movie nameOfMovie: movieList.listOfMovie
              ) {
 
 
