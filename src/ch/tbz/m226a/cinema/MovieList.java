@@ -1,25 +1,17 @@
 package ch.tbz.m226a.cinema;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class MovieList {
-    ArrayList<Movie> afterTruth = new ArrayList<>();
-    ArrayList<Movie> braveMaedchentunDasNicht = new ArrayList<>();
-    ArrayList<Movie> dieSchoenstenJahreMeinesLebens = new ArrayList<>();
-    ArrayList<Movie> iStillBelieve = new ArrayList<>();
-    ArrayList<Movie> jeanSerbegAgainstAllEnemies = new ArrayList<>();
-    ArrayList<Movie> justMercy = new ArrayList<>();
+    ArrayList<Movie> listOfMovie = new ArrayList<>();
+
 
 
     public void addMovie(){
-        afterTruth.add("AFTER TRUTH");
-        braveMaedchentunDasNicht.add("BRAVE MÄDCHEN TUN DAS NICHT");
-        dieSchoenstenJahreMeinesLebens.add("DIE SCHÖNSTEN JAHRE MEINES LEBENS");
-        iStillBelieve.add("I STILL BELIEVE");
-        jeanSerbegAgainstAllEnemies.add("JEAN SEBREG - AGAINST ALL ENEMIES");
-        justMercy.add("JUST MERCY");
-    }
+        listOfMovie.add(new Movie("After Truth", "2020-07-06", "12:00", "German", "Zürich"));
 
+    }
     public void showMovies(){
 
     }
