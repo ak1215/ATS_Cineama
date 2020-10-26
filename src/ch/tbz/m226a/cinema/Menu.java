@@ -44,11 +44,10 @@ public class Menu {
     }
 
     public void showLocations() {
-
+        System.out.println("Our Locations: " + java.util.Arrays.asList(Location.values()));
     }
-
     public void bookTicket() {
-
+        System.out.println("What is the number of the movie you want to watch?");
     }
 
 }
