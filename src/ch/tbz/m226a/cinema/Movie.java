@@ -1,15 +1,14 @@
 package ch.tbz.m226a.cinema;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Movie {
     private String movieName = "";
-    private String movieDate = null;
-    private String movieTime = null;
+    private String movieDate = "";
+    private String movieTime = "";
     private String movieAudio = "";
-    private String movieLocation = "";
-    LocalDate localDate = LocalDate.parse(movieDate);
+    private Location movieLocation = null;
+    private LocalDate localDate;
 
     public String getMovieName() {
         return movieName;
@@ -43,27 +42,14 @@ public class Movie {
         this.movieAudio = movieAudio;
     }
 
-    public String getMovieLocation() {
-        return movieLocation;
-    }
 
-    public void setMovieLocation(String movieLocation) {
-        this.movieLocation = movieLocation;
-    }
 
-    public LocalDate getLocalDate() {
-        return localDate;
-    }
-
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
-    }
-
-    public Movie(String movieName, String movieDate, String movieTime, String movieAudio, String movieLocation) {
+    public Movie(String movieName, String movieDate, String movieTime, String movieAudio, Location movieLocation) {
         this.movieName = movieName;
         this.movieDate = movieDate;
         this.movieTime = movieTime;
         this.movieAudio = movieAudio;
         this.movieLocation = movieLocation;
+        LocalDate.parse(movieDate);
     }
 }

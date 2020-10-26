@@ -10,11 +10,11 @@ public class Menu {
 
 
     public void menuOption() {
-        System.out.println("What do you wanna do? " +
-                "1. Show a list of all movies" +
-                "2. Show location of the cinema" +
-                "3. Book tickets" +
-                "4. Exit");
+        System.out.println("What do you wanna do? \n" +
+                "1. Show a list of all movies\n" +
+                "2. Show location of the cinema\n" +
+                "3. Book tickets\n" +
+                "4. Exit\n");
 
         Scanner scan = new Scanner(System.in);
         int menuOption = scan.nextInt();
@@ -35,8 +35,11 @@ public class Menu {
     }
 
     public void showCurrentMovies() {
+        int i = 1;
+        movieList.addMovie();
         for (Movie nameOfMovie : movieList.listOfMovie) {
-
+            String nameOfTheCurrentMovie = nameOfMovie.getMovieName();
+            System.out.println(i++ +"." + nameOfTheCurrentMovie);
         }
     }
 
