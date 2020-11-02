@@ -1,4 +1,6 @@
 package ch.tbz.m226a.payment;
+import ch.tbz.m226a.cinema.IncorrectOptionException;
+
 import java.util.Scanner;
 
 /**
@@ -42,11 +44,16 @@ public class Payment {
                 + "\n" + "Your CVS code: " + code);
         System.out.print("Are all your details correct? [y/n] \n");
         String decision = sc.nextLine();
-        if (decision.equals("y")) {
-            System.out.print("Your payment was successful. Have a nice day !");
-        } else if (decision.equals("n")) {
-            System.out.print("Let's try again \n");
-            payWithCard();
+
+        try {
+            if (decision.equals("y")) {
+                System.out.print("Your payment was successful. Have a nice day !");
+            } else if (decision.equals("n")) {
+                System.out.print("Let's try again \n");
+                payWithCard();
+            }
+        }catch (IncorrectOptionException err){
+            throw new IncorrectOptionException("Please choose a correct option");
         }
     }
 
@@ -76,11 +83,15 @@ public class Payment {
         String accNum = sc.nextLine();
         System.out.print("Is the following account number correct:" + accNum + " [y/n] \n");
         String decision = sc.nextLine();
-        if (decision.equals("y")) {
-            System.out.print("Your payment was successful. Have a nice day !");
-        } else if (decision.equals("n")) {
-            System.out.print("Let's try again \n");
-            paymentWithPaypal();
+        try {
+            if (decision.equals("y")) {
+                System.out.print("Your payment was successful. Have a nice day !");
+            } else if (decision.equals("n")) {
+                System.out.print("Let's try again \n");
+                payWithCard();
+            }
+        }catch (IncorrectOptionException err){
+            throw new IncorrectOptionException("Please choose a correct option");
         }
     }
 }

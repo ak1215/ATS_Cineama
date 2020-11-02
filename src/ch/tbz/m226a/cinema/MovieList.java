@@ -2,6 +2,7 @@ package ch.tbz.m226a.cinema;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * This class is for a list of all the movie. We can add movies in a list of Movies.
@@ -9,6 +10,9 @@ import java.util.ArrayList;
 public class MovieList {
     ArrayList<Movie> listOfMovie = new ArrayList<>();
 
+    /**
+     * A Method to add all the movies in out cinema
+     */
     public void addMovie() {
         listOfMovie.add(new Movie("AFTER TRUTH", "2020-04-06", "12:00", "German", Location.STADELHOFEN, 16.0));
         listOfMovie.add(new Movie("BRAVE MÄDCHEN TUN DAS NICHT", "2020-07-12", "14:00", "Englisch", Location.WINTERTHUR, 18.0));
@@ -35,7 +39,4 @@ public class MovieList {
         this.listOfMovie = listOfMovie;
     }
 
-    public void showMovies() {
-
-    }
 }

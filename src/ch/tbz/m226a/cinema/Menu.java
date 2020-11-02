@@ -1,6 +1,10 @@
 package ch.tbz.m226a.cinema;
 
+import ch.tbz.m226a.payment.Payment;
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -8,10 +12,9 @@ import java.util.stream.Collectors;
  * This is the menu of this program. We have a user friendly menu with a list of option u could do/choose.
  */
 public class Menu {
-    private char chosenMenuOption;
-    private char enumLocation;
-    private char enumLanguage;
+
     private MovieList movieList = new MovieList();
+    private Payment payment = new Payment();
 
     /**
      * This Method prints out the menu and you have the chance to choose what you wanna do.
@@ -24,20 +27,28 @@ public class Menu {
                 "4. Exit\n");
 
         Scanner scan = new Scanner(System.in);
-        int menuOption = scan.nextInt();
+
+        int menuOption = 0;
+        try {
+            menuOption = scan.nextInt();
+        } catch (InputMismatchException ex) {
+            System.out.println("Not an integer, please try again");
+        }
 
         switch (menuOption) {
             case 1:
                 showCurrentMovies();
+                menuOption();
                 break;
             case 2:
                 showLocations();
+                menuOption();
                 break;
             case 3:
                 bookTicket();
                 break;
             case 4:
-                ;
+                return;
         }
         scan.close();
     }
@@ -46,10 +57,11 @@ public class Menu {
      * This Method prints out all of the current movies.
      */
     public void showCurrentMovies() {
+        movieList.addMovie();
         ArrayList<String> listWithDuplicateValues = new ArrayList<>();
 
         //add names of movies to separate list
-        for (Movie nameOfMovie : movieList.listOfMovie) {
+        for (Movie nameOfMovie : movieList.getListOfMovie()) {
             listWithDuplicateValues.add(nameOfMovie.getMovieName());
         }
 
@@ -82,18 +94,25 @@ public class Menu {
             if (selectedMovies.getMovieName().equals(selectedMovieName)) {
                 System.out.println(selectedMovies.getMovieName() + "|" + selectedMovies.getMovieDate() +
                         "|" + selectedMovies.getMovieTime() + "|" + selectedMovies.getMovieAudio() + "|" +
-                        selectedMovies.getMovieLocation()+ "|" + selectedMovies.getMoviePrice());
+                        selectedMovies.getMovieLocation() + "|" + selectedMovies.getMoviePrice());
             }
 
         }
-        String bookedMovie = scanner.nextLine();
+
+
+        System.out.println("Which date u wanna choose?");
+        String bookedMovieDate = scanner.nextLine();
+
+        System.out.println("Which time u wanna choose?");
+        String bookedMovieTime = scanner.nextLine();
 
         for (Movie bookedMovieToPay : movieList.listOfMovie) {
-            if (bookedMovieToPay.getMovieName().equals(bookedMovie)) {
-                System.out.println("You have booked the movie " + bookedMovieToPay.getMovieName() + " it costs "+ bookedMovieToPay.getMoviePrice());
+            if (bookedMovieToPay.getMovieTime().equals(bookedMovieTime) && bookedMovieToPay.getMovieName().equals(selectedMovieName)
+            && bookedMovieToPay.getMovieDate().equals(bookedMovieDate)) {
+                System.out.println("You have booked the movie " + bookedMovieToPay.getMovieName() + " it costs " + bookedMovieToPay.getMoviePrice());
             }
-            }
-
+        }
+        payment.chosePaymentMethod();
     }
 
 }
