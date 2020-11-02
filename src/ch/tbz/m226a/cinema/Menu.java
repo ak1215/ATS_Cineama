@@ -98,17 +98,14 @@ public class Menu {
             }
 
         }
-
-
-        System.out.println("Which date u wanna choose?");
+        System.out.println("Which date you wanna choose?");
         String bookedMovieDate = scanner.nextLine();
 
-        System.out.println("Which time u wanna choose?");
+        System.out.println("Which time you wanna choose?");
         String bookedMovieTime = scanner.nextLine();
 
         for (Movie bookedMovieToPay : movieList.listOfMovie) {
-            if (bookedMovieToPay.getMovieTime().equals(bookedMovieTime) && bookedMovieToPay.getMovieName().equals(selectedMovieName)
-            && bookedMovieToPay.getMovieDate().equals(bookedMovieDate)) {
+            if (bookedMovieToPay.getMovieTime().equals(bookedMovieTime)&&bookedMovieToPay.getMovieName().equals(selectedMovieName)&&bookedMovieToPay.getMovieDate().equals(bookedMovieDate)) {
                 System.out.println("You have booked the movie " + bookedMovieToPay.getMovieName() + " it costs " + bookedMovieToPay.getMoviePrice());
             }
         }
