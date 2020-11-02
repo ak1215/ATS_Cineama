@@ -2,6 +2,9 @@ package ch.tbz.m226a.cinema;
 
 import java.time.LocalDate;
 
+/**
+ * In this class you can lout in some information of the movie in.
+ */
 public class Movie {
     private String movieName = "";
     private String movieDate = "";
@@ -43,7 +46,14 @@ public class Movie {
     }
 
 
-
+    /**
+     * This is the Constructor of the  class Movie with all the information in it.
+     * @param movieName
+     * @param movieDate
+     * @param movieTime
+     * @param movieAudio
+     * @param movieLocation
+     */
     public Movie(String movieName, String movieDate, String movieTime, String movieAudio, Location movieLocation) {
         this.movieName = movieName;
         this.movieDate = movieDate;
