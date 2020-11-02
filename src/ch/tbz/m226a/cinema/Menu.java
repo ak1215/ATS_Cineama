@@ -78,10 +78,21 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         String selectedMovieName = scanner.nextLine();
 
-        for (Movie selectedMovies:
-             ) {
+        for (Movie selectedMovies : movieList.listOfMovie) {
+            if (selectedMovies.getMovieName().equals(selectedMovieName)) {
+                System.out.println(selectedMovies.getMovieName() + "|" + selectedMovies.getMovieDate() +
+                        "|" + selectedMovies.getMovieTime() + "|" + selectedMovies.getMovieAudio() + "|" +
+                        selectedMovies.getMovieLocation()+ "|" + selectedMovies.getMoviePrice());
+            }
 
         }
+        String bookedMovie = scanner.nextLine();
+
+        for (Movie bookedMovieToPay : movieList.listOfMovie) {
+            if (bookedMovieToPay.getMovieName().equals(bookedMovie)) {
+                System.out.println("You have booked the movie " + bookedMovieToPay.getMovieName() + " it costs "+ bookedMovieToPay.getMoviePrice());
+            }
+            }
 
     }
 

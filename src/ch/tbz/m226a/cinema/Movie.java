@@ -11,6 +11,7 @@ public class Movie {
     private String movieTime = "";
     private String movieAudio = "";
     private Location movieLocation = null;
+    private double moviePrice = 0.0;
     private LocalDate localDate;
 
     public String getMovieName() {
@@ -45,6 +46,13 @@ public class Movie {
         this.movieAudio = movieAudio;
     }
 
+    public Location getMovieLocation() {
+        return movieLocation;
+    }
+
+    public double getMoviePrice() {
+        return moviePrice;
+    }
 
     /**
      * This is the Constructor of the  class Movie with all the information in it.
@@ -54,12 +62,13 @@ public class Movie {
      * @param movieAudio
      * @param movieLocation
      */
-    public Movie(String movieName, String movieDate, String movieTime, String movieAudio, Location movieLocation) {
+    public Movie(String movieName, String movieDate, String movieTime, String movieAudio, Location movieLocation, double moviePrice) {
         this.movieName = movieName;
         this.movieDate = movieDate;
         this.movieTime = movieTime;
         this.movieAudio = movieAudio;
         this.movieLocation = movieLocation;
+        this.moviePrice = moviePrice;
         LocalDate.parse(movieDate);
     }
 }
